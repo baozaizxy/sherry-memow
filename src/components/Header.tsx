@@ -11,9 +11,9 @@ const Header = () => {
     ]
     
     return (
-        <div className="bg-red-500 flex text-white p-4 top-0 left-0 w-full shadow-md z-50">
+        <div className="fixed bg-black/50 text-white p-4 top-0 left-0 w-full h-80 shadow-md z-50" style={{ willChange: "transform" }}>
             <div className="container mx-auto flex justify-between items-center">
-                <Image src={logo} className='h-4/5 transform -translate-x-1/2' alt="Logo" />
+                <Image src={logo} className='h-4/5 transform ' alt="Logo" />
                 <ul className="flex items-center ml-auto">
                     {links.map(({ href, label }) => (
                         <li key={href} className="px-4 text-2xl text-gray-500 hover:text-gray-700">

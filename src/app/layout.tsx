@@ -1,4 +1,4 @@
-import './globals.css';
+import '@/style/globals.css';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Bottom from '@/components/Bottom';
@@ -19,11 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} p-10 h-screen w-screen`}>
+      <body className={`${inter.className} h-screen w-screen`}>
         <Header />
         <TransitionProvider>
           <div className="content-container">
-            {children}
+            {/* <TransitionComponent> */}
+              {children}
+            {/* </TransitionComponent> */}
           </div>
         </TransitionProvider>
         <Bottom />

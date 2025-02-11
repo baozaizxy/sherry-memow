@@ -2,13 +2,13 @@
 
 import { useContext } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
-import { useRouter } from 'next/router';
+import { usePathname } from "next/navigation";
 import gsap from 'gsap/dist/gsap';
 
 import TransitionContext from '@/context/TransitionContext';
 
 const TransitionComponent = ({ children }) => {
-  const router = useRouter();
+  const router = usePathname();
   const { toggleCompleted } = useContext(TransitionContext);
   return (
     <SwitchTransition>
