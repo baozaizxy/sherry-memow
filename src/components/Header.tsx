@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '../../public/logo.png';
 
 const Header = () => {
     const links = [
@@ -9,13 +11,13 @@ const Header = () => {
     ]
     
     return (
-        <div className="bg-gray-800 text-white p-4">
+        <div className="bg-transparent text-white p-4">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="text-lg font-bold">Sherry Blog</div>
-                <ul className="flex items-center">
+                <Image src={logo} className='h-4/5 -translate-x-2/5' alt="Logo" />
+                <ul className="flex items-center ml-auto">
                     {links.map(({ href, label }) => (
-                        <li key={href} className="px-4 text-2xl">
-                        <Link href={href}>{label}</Link>
+                        <li key={href} className="px-4 text-2xl text-gray-500 hover:text-gray-700">
+                            <Link href={href}>{label}</Link>
                         </li>
                     ))}
                 </ul>
@@ -23,7 +25,7 @@ const Header = () => {
                     <input 
                         type="text" 
                         placeholder="Search..." 
-                        className="pl-2 pr-8 py-1 rounded bg-gray-700 text-white focus:outline-none"
+                        className="pl-2 pr-8 py-1 rounded bg-gray-600 bg-opacity-40 text-white focus:outline-none"
                     />
                     <button className="absolute right-0 top-0 mt-1 mr-2">
                         <svg 
