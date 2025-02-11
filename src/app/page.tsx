@@ -1,7 +1,6 @@
 'use client'
-
-import { useContext, useRef, useState } from 'react';
-import { gsap } from 'gsap/dist/gsap';
+import React, { useRef, useState, useContext } from 'react';
+import gsap from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 

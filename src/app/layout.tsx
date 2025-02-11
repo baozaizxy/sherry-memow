@@ -2,7 +2,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Bottom from '@/components/Bottom';
-import TransitionComponent from '@/components/Transition';
+// import TransitionComponent from '@/components/Transition';
 import { TransitionProvider } from '@/context/TransitionContext';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -23,7 +23,7 @@ export default function RootLayout({
         <Header />
         <TransitionProvider>
           <div className="content-container">
-            <TransitionComponent>{children}</TransitionComponent>
+            {children}
           </div>
         </TransitionProvider>
         <Bottom />
