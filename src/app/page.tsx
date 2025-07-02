@@ -60,7 +60,7 @@ export default function Layers() {
 
   return (
     <main ref={main}>
-      <section className="description panel blue">
+      <section className="description panel cliff">
         <div>
           <h1>Layered pinning</h1>
           <p>Use pinning to layer panels on top of each other as you scroll.</p>
@@ -69,10 +69,10 @@ export default function Layers() {
           </div>
         </div>
       </section>
-      <section className="panel red">ONE</section>
-      <section className="panel orange">TWO</section>
-      <section className="panel purple">THREE</section>
-      <section className="panel green">FOUR</section>
+      <section className="panel lawnandsea">ONE</section>
+      <section className="panel shadow">TWO</section>
+      <section className="panel cityview">THREE</section>
+      <section className="panel binchicken">FOUR</section>
     </main>
   );
 }
