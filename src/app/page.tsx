@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useRef, useState, useContext, useLayoutEffect } from 'react';
 import gsap from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -18,7 +18,7 @@ export default function Layers() {
   const goToSection = (i: number) => {
     // Remove the GSAP instance with the specific ID
     // to prevent memory leak
-    ctx.data.forEach((e: { vars: { id: string; }; kill: () => void; }) => {
+    ctx.data.forEach((e: { vars: { id: string }; kill: () => void }) => {
       if (e.vars && e.vars.id === 'scrollTween') {
         e.kill();
       }
@@ -44,7 +44,7 @@ export default function Layers() {
           trigger: panel,
           start: 'top bottom',
           end: '+=200%',
-          onToggle: (self: { isActive: boolean; }) =>
+          onToggle: (self: { isActive: boolean }) =>
             self.isActive && !scrollTween.current && goToSection(i),
         });
       });
@@ -56,7 +56,6 @@ export default function Layers() {
     });
     return () => ctx.revert();
   }, [completed]);
-
 
   return (
     <main ref={main}>

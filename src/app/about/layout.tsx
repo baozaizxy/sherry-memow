@@ -7,7 +7,6 @@ import { ScrollTrigger } from 'gsap-trial/dist/ScrollTrigger';
 import { Inter } from 'next/font/google';
 import { useGSAP } from '@gsap/react';
 
-
 const inter = Inter({ subsets: ['latin'] });
 
 if (typeof window !== 'undefined') {
@@ -32,7 +31,7 @@ export default function RootLayout({ children }) {
 
   return (
     <div id="smooth-wrapper" className={inter.className}>
-        <div id="smooth-content">{children}</div>
+      <div id="smooth-content">{children}</div>
     </div>
   );
 }
