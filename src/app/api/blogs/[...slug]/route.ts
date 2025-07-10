@@ -4,29 +4,25 @@ import path from 'path';
 
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: { slug: string[] } }
 ) {
   try {
-    const { slug } = params;
+    // slug 现在是数组，比如 ['Frontend', 'xxx']
+    const slugArr = params.slug;
     const contentDir = path.join(process.cwd(), 'content');
-    
-    // 移除.md扩展名（如果存在）
-    const cleanSlug = slug.replace(/\.md$/, '');
-    const filePath = path.join(contentDir, `${cleanSlug}.md`);
-    
-    // 检查文件是否存在
+    const filePath = path.join(contentDir, ...slugArr) + '.md';
+
     if (!fs.existsSync(filePath)) {
       return NextResponse.json(
         { error: 'Blog not found' },
         { status: 404 }
       );
     }
-    
-    // 读取文件内容
+
     const content = fs.readFileSync(filePath, 'utf-8');
-    
+
     return NextResponse.json({
-      slug: cleanSlug,
+      slug: slugArr.join('/'),
       content,
     });
   } catch (error) {

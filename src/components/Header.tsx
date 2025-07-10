@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <div
-      className="fixed left-0 top-0 z-50 h-16 w-full bg-black/50 p-4 text-white shadow-lg"
+      className="fixed left-0 top-0 z-50 h-16 w-full bg-black p-4 text-white shadow-lg"
       style={{ willChange: 'transform' }}
     >
       <div className="container mx-auto flex h-full items-center justify-between">

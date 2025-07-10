@@ -10,7 +10,7 @@ const Blog = () => {
   useEffect(() => {
     (async () => {
       try {
-        const cleanSlug = typeof slug === 'string' ? slug.replace(/\.md$/, '') : slug;
+        const cleanSlug = Array.isArray(slug) ? slug.join('/') : slug.replace(/\.md$/, '');
         const res = await fetch(`/api/blogs/${cleanSlug}`);
         if (res.ok) {
           const data = await res.json();
@@ -25,7 +25,7 @@ const Blog = () => {
   }, [slug]);
 
   return (
-    <div className="prose mx-auto py-10">
+    <div className="prose prose-invert mx-auto py-10" style={{ marginTop: '100px' }}>
       <ReactMarkdown>{content}</ReactMarkdown>
     </div>
   );
